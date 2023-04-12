@@ -1,6 +1,7 @@
 package myapp_restaurante_model.gui_mantenimiento_usuarios;
 
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Toolkit;
@@ -8,30 +9,39 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import myapp_restaurante_model.bussiness.Controller_Menu;
-import myapp_restaurante_model.gui_menu.Menu;
+import myapp_restaurante_model.gui_menu.TextPrompt;
+import myapp_restaurante_model.logic.FilesTxt;
+import myapp_restaurante_model.logic.LogicFilesTxt;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Tony ML
- */
 public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
 
+    private TextPrompt t;
+    private int option;
+    private int xMouse;
+    private int yMouse;
+    boolean check[] = {false, false, false};
+    private int cont = 0;
+    private String[] information;
+    private String[] informationForPerson;
+    private LogicFilesTxt lTxt;
+    private FilesTxt f;
+    private String addressTxt;
     private Dimension dim;
 
     /**
      * Creates new form GUI
      */
     public GUI_Mantenimiento_Usuarios() {
+        lTxt = new LogicFilesTxt();
+        f = new FilesTxt();
+        //Direcion del txt
+        addressTxt = "src\\myapp_restaurante_model\\data\\usuario.txt";
+
         super.setUndecorated(true);
         dim = Toolkit.getDefaultToolkit().getScreenSize();//Obtener el tamaña de la pantalla actual
         initComponents();
         jTextField1.setText(null);
-       
+
         super.setSize(dim);
 
         // Configurar el administrador de diseño
@@ -48,10 +58,27 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
 
         jPanel13.setVisible(false);
         jPanel10.setVisible(false);
-       jPanel9.setVisible(false);
+        jPanel14.setVisible(false);
+        jLabel13.setVisible(false);
 
+        //Efecto
+        setTextPront();
 // Maximiza el JFrame
         super.setExtendedState(JFrame.MAXIMIZED_BOTH);
+    }
+
+    private void setTextPront() {
+        t = new TextPrompt("Usuario", jTextField1);
+        t.changeAlpha(0.75f);
+        t.changeStyle(Font.ITALIC);
+        t.changeFontSize(11);
+
+        // LO AGREGAMOS
+        t = new TextPrompt("Contraseña", jTextField2);
+        t.changeAlpha(0.75f);
+        t.changeStyle(Font.ITALIC);
+        t.changeFontSize(11);
+
     }
 
     public JPanel getjPanel1() {
@@ -78,11 +105,11 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jPanel10 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -108,7 +135,7 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
             .addGap(0, 128, Short.MAX_VALUE)
         );
 
-        jPanel3.setBackground(new java.awt.Color(204, 0, 255));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -158,35 +185,32 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
 
         jPanel3.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 100, 20));
 
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel9.setEnabled(false);
+        jPanel14.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel14.setEnabled(false);
 
-        jLabel12.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel12.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel12.setText(" Nombre ");
+        jLabel17.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel17.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("Contraseña");
+        jLabel17.setToolTipText("Nombre o dirección");
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addComponent(jLabel17)
+                .addGap(0, 4, Short.MAX_VALUE))
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 70, 20));
-
-        jComboBox1.setBackground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setFont(new java.awt.Font("Dialog", 2, 10)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(0, 0, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuario", "Administrador" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153)));
-        jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 390, -1, -1));
+        jPanel3.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, 60, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 153, 204));
         jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -198,7 +222,7 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 470, 130, 40));
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 520, 130, 40));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 153, 255));
@@ -209,7 +233,19 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
                 jLabel5MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, -1, 20));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 530, -1, 20));
+
+        jTextField2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTextField2MouseEntered(evt);
+            }
+        });
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, 250, 40));
 
         jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -226,33 +262,30 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
         jPanel10.setEnabled(false);
 
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 250, Short.MAX_VALUE)
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 30, Short.MAX_VALUE)
+        );
+
+        jPanel3.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 250, 30));
+
         jLabel13.setBackground(new java.awt.Color(204, 0, 0));
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 0, 0));
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_mantenimiento_usuarios/error_circle (3).png"))); // NOI18N
         jLabel13.setText(" No pudimos verificar los datos");
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
-        jPanel3.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, 250, 30));
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 215, 28));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 153, 255));
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_mantenimiento_usuarios/F_Blanco.png"))); // NOI18N
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 550));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -280,40 +313,37 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here://Boton siguiente 
+        information = lTxt.getInformation(f.readFile(addressTxt));
 
-        if (jComboBox1.getSelectedItem().toString().equalsIgnoreCase("Usuario")) {//entra como usuario
-            if (JOptionPane.showInputDialog(rootPane, "Contraseña", "Usuario", HEIGHT).equals(1)) {
+        for (int i = 0; i < information.length; i++) {
+            informationForPerson = lTxt.getInformationIndividual(lTxt.getInformation(f.readFile(addressTxt))[i]);
+            for (String informationForPerson1 : informationForPerson) {
+                if (informationForPerson[1].equalsIgnoreCase(jTextField1.getText())) {//condicion para el login
+                    System.err.println("login");
+                    check[0] = true;
+                    if (lTxt.getInformationIndividual(lTxt.getInformation(f.readFile(addressTxt))[i])[2].equals(jTextField2.getText())) {//condicion para la contraseña
 
-            } else {
-                jPanel10.setVisible(true); //mensaje de error
-                jPanel13.setVisible(true); //mensaje de error
+                        if (lTxt.getInformationIndividual(lTxt.getInformation(f.readFile(addressTxt))[i])[3].equals("0")) {//entra como usuario o administrador
+                            check[2] = true;
+                            //JOptionPane.showConfirmDialog(null, lTxt.getInformationIndividual(lTxt.getInformation(f.readFile(addressTxt))[i])[3]);
+                        }
+                        System.err.println("contra");
+                        check[1] = true;
+                        Controller_Menu cm = new Controller_Menu(check[2],jTextField1.getText());
+                        this.dispose();
+                    }
+                }
             }
         }
-        if (jComboBox1.getSelectedItem().toString().equalsIgnoreCase("Administrador")) {//entra como usuario
-
-            if ("1".equals(JOptionPane.showInputDialog(rootPane, "Contraseña", "Administrador", HEIGHT))) {
-                Controller_Menu controller_Menu = new Controller_Menu();
-                this.dispose();
-            } else {
-                jPanel10.setVisible(true); //mensaje de error
-                jPanel13.setVisible(true); //mensaje de error
-            }
-        }
-        /*
-        if ( jComboBox1.getSelectedItem().toString().equalsIgnoreCase("Usuario")) {
-            jPanel10.setVisible(true);
+        if (!check[0] && !check[1]) {
             jPanel13.setVisible(true);
-           
-            
-        } else {
-            
-            data[0] = jTextField1.getText();// Nombre
-            data[1] = jComboBox1.getSelectedItem().toString();
-            Controller_Login controller_Login;//Direccion
-            controller_Login = new Controller_Login(data);
-            dispose();
+            jPanel10.setVisible(true);
+            jPanel14.setVisible(true);
+            jLabel13.setVisible(true);
+
         }
-         */
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -329,18 +359,26 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
 
     private void jTextField1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseEntered
         // TODO add your handling code here:
-         
+
     }//GEN-LAST:event_jTextField1MouseEntered
 
     private void jPanel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseEntered
         // TODO add your handling code here:
-        jPanel9.setVisible(true);
+
     }//GEN-LAST:event_jPanel3MouseEntered
 
     private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
         // TODO add your handling code here:
-        jPanel9.setVisible(true);
+        ;
     }//GEN-LAST:event_formMouseEntered
+
+    private void jTextField2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField2MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2MouseEntered
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -394,11 +432,10 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -406,9 +443,10 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 
 }

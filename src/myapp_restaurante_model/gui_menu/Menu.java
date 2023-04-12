@@ -12,6 +12,7 @@ import myapp_restaurante_model.gui_menu.opciones.Opciones_Mantenimiento;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import myapp_restaurante_model.bussiness.Controller_Gui_Mantenimiento_Usuarios;
 
 /**
  *
@@ -27,6 +28,16 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         super.setLocationRelativeTo(null);
         derechos();
+    }
+    public Menu(boolean check, String user) {
+        super.setUndecorated(true);
+        initComponents();
+        super.setLocationRelativeTo(null);
+        derechos();
+        if (!check) {
+            lMantenimiento.setVisible(false);
+        }
+        jlUser.setText(user);
     }
 
     /**
@@ -50,7 +61,7 @@ public class Menu extends javax.swing.JFrame {
         lMantenimiento = new javax.swing.JLabel();
         lMovimientos = new javax.swing.JLabel();
         lConsultas = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jlUser = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -147,11 +158,11 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel2.add(lConsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 140, 40));
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/usuario (1).png"))); // NOI18N
-        jLabel3.setText("TonyML");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 140, -1));
+        jlUser.setBackground(new java.awt.Color(255, 255, 255));
+        jlUser.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jlUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/usuario (1).png"))); // NOI18N
+        jlUser.setText("TonyML");
+        jPanel2.add(jlUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 140, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -189,6 +200,11 @@ public class Menu extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/cambiar_usuario.png"))); // NOI18N
         jLabel4.setText("Cambiar Usuario");
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 12, -1, 36));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 810, 60));
@@ -271,6 +287,12 @@ public class Menu extends javax.swing.JFrame {
         jPanel_Menu.repaint();
     }//GEN-LAST:event_lConsultasMouseClicked
 
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        Controller_Gui_Mantenimiento_Usuarios cg = new Controller_Gui_Mantenimiento_Usuarios();
+    }//GEN-LAST:event_jLabel4MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -311,7 +333,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -321,6 +342,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel_Menu;
+    private javax.swing.JLabel jlUser;
     private javax.swing.JLabel jlabelDerechos;
     private javax.swing.JLabel lConsultas;
     private javax.swing.JLabel lMantenimiento;

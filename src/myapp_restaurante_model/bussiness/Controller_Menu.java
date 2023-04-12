@@ -7,9 +7,9 @@ import myapp_restaurante_model.gui_menu.Menu;
 public class Controller_Menu implements ActionListener {
 //instancias
 
-    public Controller_Menu() {
+    public Controller_Menu(boolean check, String user) {
         Menu menu;
-        menu = new Menu();
+        menu = new Menu(check,user);
         menu.setVisible(true);
     }
 
