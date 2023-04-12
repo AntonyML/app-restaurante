@@ -5,6 +5,14 @@
  */
 package myapp_restaurante_model.gui_menu;
 
+import myapp_restaurante_model.gui_menu.opciones.Opciones_Movimientos;
+import myapp_restaurante_model.gui_menu.opciones.Opciones_Procesos;
+import myapp_restaurante_model.gui_menu.opciones.Opciones_Consultas;
+import myapp_restaurante_model.gui_menu.opciones.Opciones_Mantenimiento;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Tony ML
@@ -18,7 +26,7 @@ public class Menu extends javax.swing.JFrame {
         super.setUndecorated(true);
         initComponents();
         super.setLocationRelativeTo(null);
-
+        derechos();
     }
 
     /**
@@ -32,37 +40,37 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jlabelDerechos = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lProcesos = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lMantenimiento = new javax.swing.JLabel();
+        lMovimientos = new javax.swing.JLabel();
+        lConsultas = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        jPanel_Menu = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/usuario (1).png"))); // NOI18N
-        jLabel1.setText("TonyML");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 140, -1));
+        jlabelDerechos.setBackground(new java.awt.Color(255, 255, 255));
+        jlabelDerechos.setFont(new java.awt.Font("Dialog", 1, 9)); // NOI18N
+        jlabelDerechos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(jlabelDerechos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 190, 30));
 
         jLabel2.setBackground(new java.awt.Color(0, 204, 0));
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
@@ -70,12 +78,17 @@ public class Menu extends javax.swing.JFrame {
         jLabel2.setText("Online");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 120, -1, 30));
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/procesos.png"))); // NOI18N
-        jLabel3.setText(" Procesos");
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 150, 30));
+        lProcesos.setBackground(new java.awt.Color(255, 255, 255));
+        lProcesos.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lProcesos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/procesos.png"))); // NOI18N
+        lProcesos.setText(" Procesos");
+        lProcesos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lProcesos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lProcesosMouseClicked(evt);
+            }
+        });
+        jPanel2.add(lProcesos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 130, 30));
 
         jPanel5.setBackground(new java.awt.Color(0, 255, 0));
         jPanel5.setForeground(new java.awt.Color(153, 0, 153));
@@ -86,30 +99,59 @@ public class Menu extends javax.swing.JFrame {
         jLabel5.setText("Resta");
         jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        jLabel6.setBackground(new java.awt.Color(153, 255, 255));
+        jLabel6.setBackground(new java.awt.Color(255, 0, 0));
         jLabel6.setFont(new java.awt.Font("Dialog", 3, 24)); // NOI18N
         jLabel6.setText("Urante");
         jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/1.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/fondo.jpg"))); // NOI18N
         jLabel7.setText("jLabel7");
+        jLabel7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 1, new java.awt.Color(0, 0, 0)));
         jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 60));
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 60));
 
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/mantenimiento.jpg"))); // NOI18N
-        jLabel8.setText(" Mantenimiento");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 160, 30));
+        lMantenimiento.setBackground(new java.awt.Color(255, 255, 255));
+        lMantenimiento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lMantenimiento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/mantenimiento.png"))); // NOI18N
+        lMantenimiento.setText(" Mantenimiento");
+        lMantenimiento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lMantenimiento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lMantenimientoMouseClicked(evt);
+            }
+        });
+        jPanel2.add(lMantenimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 160, 30));
 
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/movimientos.png"))); // NOI18N
-        jLabel9.setText(" Momivientos");
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 160, 30));
+        lMovimientos.setBackground(new java.awt.Color(255, 255, 255));
+        lMovimientos.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lMovimientos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/movimientos.png"))); // NOI18N
+        lMovimientos.setText(" Momivientos");
+        lMovimientos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lMovimientos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lMovimientosMouseClicked(evt);
+            }
+        });
+        jPanel2.add(lMovimientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 160, 30));
+
+        lConsultas.setBackground(new java.awt.Color(255, 255, 255));
+        lConsultas.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lConsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/consultas.png"))); // NOI18N
+        lConsultas.setText("Consultas");
+        lConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lConsultas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lConsultasMouseClicked(evt);
+            }
+        });
+        jPanel2.add(lConsultas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 140, 40));
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/usuario (1).png"))); // NOI18N
+        jLabel3.setText("TonyML");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 140, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -121,31 +163,25 @@ public class Menu extends javax.swing.JFrame {
                 jLabel10MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 540, 90, 40));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 80, 30));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/1.jpg"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/fondo.jpg"))); // NOI18N
         jLabel11.setText("jLabel11");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 190, 70));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 190, 70));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/1.jpg"))); // NOI18N
-        jLabel12.setText("jLabel11");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 190, 60));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/2.gif"))); // NOI18N
-        jLabel13.setText("jLabel13");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 190, 170));
-
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/2.gif"))); // NOI18N
-        jLabel14.setText("jLabel13");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 190, 180));
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/1.jpg"))); // NOI18N
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/fondo.jpg"))); // NOI18N
         jLabel15.setText("jLabel11");
-        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 190, 210));
+        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 170, 230));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/fondo.jpg"))); // NOI18N
+        jLabel13.setText("jLabel11");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 190, 70));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 190, 600));
 
         jPanel3.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setBackground(javax.swing.UIManager.getDefaults().getColor("Button.foreground"));
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
@@ -153,29 +189,14 @@ public class Menu extends javax.swing.JFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/cambiar_usuario.png"))); // NOI18N
         jLabel4.setText("Cambiar Usuario");
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(624, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(28, 28, 28))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 12, -1, 36));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 810, 60));
 
-        jPanel4.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 810, 540));
+        jPanel_Menu.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel_Menu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 0, 102), 2));
+        jPanel_Menu.setLayout(new java.awt.BorderLayout());
+        jPanel1.add(jPanel_Menu, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 810, 540));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -195,6 +216,60 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(1);
     }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void lProcesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lProcesosMouseClicked
+        // TODO add your handling code here:
+
+        Opciones_Procesos oP = new Opciones_Procesos();
+        jPanel_Menu.removeAll();
+        oP.setSize(810, 540);
+        oP.setLocation(0, 0);
+        jPanel_Menu.add(oP, BorderLayout.CENTER);
+        jPanel_Menu.revalidate();
+        jPanel_Menu.repaint();
+
+    }//GEN-LAST:event_lProcesosMouseClicked
+    private void derechos() {
+// Obtener año actual
+        int anioActual = java.time.Year.now().getValue();
+
+        // Mensaje de derechos reservados
+        String mensajePieDeAplicacion = "© " + anioActual + " Todos los derechos reservados.";
+        jlabelDerechos.setText(mensajePieDeAplicacion);
+    }
+    private void lMantenimientoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lMantenimientoMouseClicked
+        // TODO add your handling code here: Mantenimiento
+        Opciones_Mantenimiento oMa;
+        oMa = new Opciones_Mantenimiento(this);
+        jPanel_Menu.removeAll();
+        oMa.setSize(810, 540);
+        oMa.setLocation(0, 0);
+        jPanel_Menu.add(oMa, BorderLayout.CENTER);
+        jPanel_Menu.revalidate();
+        jPanel_Menu.repaint();
+    }//GEN-LAST:event_lMantenimientoMouseClicked
+
+    private void lMovimientosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lMovimientosMouseClicked
+        // TODO add your handling code here:Movimientos
+        Opciones_Movimientos oM = new Opciones_Movimientos();
+        jPanel_Menu.removeAll();
+        oM.setSize(810, 540);
+        oM.setLocation(0, 0);
+        jPanel_Menu.add(oM, BorderLayout.CENTER);
+        jPanel_Menu.revalidate();
+        jPanel_Menu.repaint();
+    }//GEN-LAST:event_lMovimientosMouseClicked
+
+    private void lConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lConsultasMouseClicked
+        // TODO add your handling code here:consultas
+        Opciones_Consultas oC = new Opciones_Consultas();
+        jPanel_Menu.removeAll();
+        oC.setSize(810, 540);
+        oC.setLocation(0, 0);
+        jPanel_Menu.add(oC, BorderLayout.CENTER);
+        jPanel_Menu.revalidate();
+        jPanel_Menu.repaint();
+    }//GEN-LAST:event_lConsultasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -231,12 +306,9 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -244,12 +316,161 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel_Menu;
+    private javax.swing.JLabel jlabelDerechos;
+    private javax.swing.JLabel lConsultas;
+    private javax.swing.JLabel lMantenimiento;
+    private javax.swing.JLabel lMovimientos;
+    private javax.swing.JLabel lProcesos;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getjLabel1() {
+        return jlabelDerechos;
+    }
+
+    public void setjLabel1(JLabel jLabel1) {
+        this.jlabelDerechos = jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public void setjLabel10(JLabel jLabel10) {
+        this.jLabel10 = jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public void setjLabel11(JLabel jLabel11) {
+        this.jLabel11 = jLabel11;
+    }
+
+    public JLabel getjLabel13() {
+        return jLabel13;
+    }
+
+    public void setjLabel13(JLabel jLabel13) {
+        this.jLabel13 = jLabel13;
+    }
+
+    public JLabel getjLabel15() {
+        return jLabel15;
+    }
+
+    public void setjLabel15(JLabel jLabel15) {
+        this.jLabel15 = jLabel15;
+    }
+
+    public JLabel getjLabel2() {
+        return jLabel2;
+    }
+
+    public void setjLabel2(JLabel jLabel2) {
+        this.jLabel2 = jLabel2;
+    }
+
+    public JLabel getjLabel3() {
+        return lProcesos;
+    }
+
+    public void setjLabel3(JLabel jLabel3) {
+        this.lProcesos = jLabel3;
+    }
+
+    public JLabel getjLabel4() {
+        return jLabel4;
+    }
+
+    public void setjLabel4(JLabel jLabel4) {
+        this.jLabel4 = jLabel4;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public void setjLabel5(JLabel jLabel5) {
+        this.jLabel5 = jLabel5;
+    }
+
+    public JLabel getjLabel6() {
+        return jLabel6;
+    }
+
+    public void setjLabel6(JLabel jLabel6) {
+        this.jLabel6 = jLabel6;
+    }
+
+    public JLabel getjLabel7() {
+        return jLabel7;
+    }
+
+    public void setjLabel7(JLabel jLabel7) {
+        this.jLabel7 = jLabel7;
+    }
+
+    public JLabel getjLabel8() {
+        return lMantenimiento;
+    }
+
+    public void setjLabel8(JLabel jLabel8) {
+        this.lMantenimiento = jLabel8;
+    }
+
+    public JLabel getjLabel9() {
+        return lMovimientos;
+    }
+
+    public void setjLabel9(JLabel jLabel9) {
+        this.lMovimientos = jLabel9;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+
+    public JPanel getjPanel2() {
+        return jPanel2;
+    }
+
+    public void setjPanel2(JPanel jPanel2) {
+        this.jPanel2 = jPanel2;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public void setjPanel3(JPanel jPanel3) {
+        this.jPanel3 = jPanel3;
+    }
+
+    public JPanel getjPanel_Menu() {
+        return jPanel_Menu;
+    }
+
+    public void setjPanel_Menu(JPanel jPanel4) {
+        this.jPanel_Menu = jPanel4;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public void setjPanel5(JPanel jPanel5) {
+        this.jPanel5 = jPanel5;
+    }
+
+//encapsulamiento
 }

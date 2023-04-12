@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package myapp_restaurante_model.domain;
 
 import java.util.Date;
 
 /**
  *
- * @author Tony ML
+ * @author TML
  */
 public final class Reserva {
 

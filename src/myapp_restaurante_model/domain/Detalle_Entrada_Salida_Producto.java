@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package myapp_restaurante_model.domain;
 
 import java.util.logging.Logger;
 
 /**
  *
- * @author Tony ML
+ * @author TML
  */
 public class Detalle_Entrada_Salida_Producto {
    private int id_E_S_Detalle; 

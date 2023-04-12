@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package myapp_restaurante_model.domain;
 
 /**
  *
- * @author Tony ML
+ * @author TML
  */
 public final class Tipo_Producto {
      private int id_Cliente_Reserva;

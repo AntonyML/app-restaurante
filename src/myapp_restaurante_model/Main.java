@@ -1,20 +1,11 @@
 package myapp_restaurante_model;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 
-import myapp_restaurante_model.gui_login.GUI_Login;
-import javafx.application.Platform;
-import javafx.stage.Stage;
 
-/**
- *
- * @author Tony ML
- */
+import myapp_restaurante_model.bussiness.Controller_Gui_Mantenimiento_Usuarios;
+
+
 public class Main {
 
     /**
@@ -22,9 +13,8 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         GUI_Login.main(args);
-        //new Hilo_Video().start();
-        
+        Controller_Gui_Mantenimiento_Usuarios controller_Gui_Mantenimiento_Usuarios;
+        //controller_Gui_Mantenimiento_Usuarios = new  Controller_Gui_Mantenimiento_Usuarios();
      
     }
 
