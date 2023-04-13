@@ -29,6 +29,7 @@ public class Menu extends javax.swing.JFrame {
         super.setLocationRelativeTo(null);
         derechos();
     }
+
     public Menu(boolean check, String user) {
         super.setUndecorated(true);
         initComponents();
@@ -494,5 +495,5 @@ public class Menu extends javax.swing.JFrame {
         this.jPanel5 = jPanel5;
     }
 
-//encapsulamiento
+
 }

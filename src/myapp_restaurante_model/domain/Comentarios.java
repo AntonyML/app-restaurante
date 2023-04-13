@@ -66,7 +66,7 @@ public class Comentarios {
 
     @Override
     public String toString() {
-        return "Comentarios{" + "id_Comentario=" + id_Comentario + ", correo=" + correo + ", asunto=" + asunto + ", comentario=" + comentario + ", fecha_comentario=" + fecha_comentario + '}';
+        return  id_Comentario + "," + correo + "," + asunto + "," + comentario + "," + fecha_comentario ;
     }
          
          

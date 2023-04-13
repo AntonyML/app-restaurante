@@ -329,11 +329,15 @@ public class GUI_Mantenimiento_Usuarios extends javax.swing.JFrame {
                         }
                         System.err.println("contra");
                         check[1] = true;
-                        Controller_Menu cm = new Controller_Menu(check[2],jTextField1.getText());
-                        this.dispose();
+
                     }
                 }
             }
+        }
+
+        if (check[0] && check[1]) {
+            Controller_Menu cm = new Controller_Menu(check[2], jTextField1.getText());
+            this.dispose();
         }
         if (!check[0] && !check[1]) {
             jPanel13.setVisible(true);

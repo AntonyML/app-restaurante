@@ -8,25 +8,23 @@ package myapp_restaurante_model.gui_menu.opciones;
 import myapp_restaurante_model.gui_menu.opciones.mantenimiento.PMUsuarios;
 import java.awt.BorderLayout;
 import myapp_restaurante_model.gui_menu.Menu;
-
-
-
-
-
+import myapp_restaurante_model.gui_menu.opciones.mantenimiento.PMComentarios;
 
 public class Opciones_Mantenimiento extends javax.swing.JPanel {
-private final Menu menu;
+
+    private final Menu menu;
+
     /**
      * Creates new form NewJPanel
+     *
      * @param menu
      */
     public Opciones_Mantenimiento(Menu menu) {
-       this.menu = menu;
+        this.menu = menu;
         initComponents();
-      
 
     }
-  
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,6 +86,11 @@ private final Menu menu;
 
         cComentarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cComentarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cComentarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cComentariosMouseClicked(evt);
+            }
+        });
         jPanel1.add(cComentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
 
         cEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
@@ -191,21 +194,34 @@ private final Menu menu;
 
     private void cUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cUsuarioMouseClicked
         // TODO add your handling code here: Usuarios
-           PMUsuarios pmu;
-         pmu = new PMUsuarios();
+        PMUsuarios pmu;
+        pmu = new PMUsuarios();
         menu.getjPanel_Menu().removeAll();
         pmu.setSize(810, 540);
         pmu.setLocation(0, 0);
         menu.getjPanel_Menu().add(pmu, BorderLayout.CENTER);
-         menu.getjPanel_Menu().revalidate();
-         menu.getjPanel_Menu().repaint();
-      
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+
     }//GEN-LAST:event_cUsuarioMouseClicked
 
     private void cEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cEmpleadoMouseClicked
         // TODO add your handling code here:Empleado 
         System.err.println("empleado");
+
     }//GEN-LAST:event_cEmpleadoMouseClicked
+
+    private void cComentariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cComentariosMouseClicked
+        // TODO add your handling code here:Comentarios
+        PMComentarios pmc;
+        pmc = new PMComentarios();
+        menu.getjPanel_Menu().removeAll();
+        pmc.setSize(810, 540);
+        pmc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(pmc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cComentariosMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -232,6 +248,4 @@ private final Menu menu;
     // End of variables declaration//GEN-END:variables
 
 //encapsulamiento
-
-
 }

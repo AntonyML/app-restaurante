@@ -3,6 +3,9 @@ package myapp_restaurante_model.logic;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.TableModel;
 
 public class LogicFilesTxt {
 
@@ -10,70 +13,15 @@ public class LogicFilesTxt {
 
     }
 
-    public String[] gteOnlyPosicion0theData(String data, int size) {
-        String[] result = new String[size];
-        String[] dataOneComplete = getInformation(data);
-        String[] dataSplitImcomplete;
+    public String deleteInformation(String data, int coord) {
+        String aux = "";
+        for (int i = 0; i < getInformation(data).length; i++) {
 
-        for (int i = 0; i < dataOneComplete.length; i++) {
-            dataSplitImcomplete = getInformationIndividual(dataOneComplete[i]);
-            for (int j = 0; j < dataSplitImcomplete.length; j++) {
-                if (j == 0) {
-                    result[i] = (dataSplitImcomplete)[j];
-                }
-            }
-
-        }
-        return result;
-    }
-
-    public String[] gteOnlyPosicion0theDataController(String data, int size) {
-        String[] result = new String[size];
-        String[] dataOneComplete = getInformation(data);
-        String[] dataSplitImcomplete;
-
-        for (int i = 0; i < dataOneComplete.length; i++) {
-            dataSplitImcomplete = getInformationIndividual(dataOneComplete[i]);
-            for (int j = 0; j < dataSplitImcomplete.length; j++) {
-                if (j == 1) {
-                    result[i] = (dataSplitImcomplete)[j];
-                }
-            }
-
-        }
-        return result;
-    }
-
-    public String deteleSpace(String[] data) {
-        String result = "";
-        System.out.print(" Delete { " + "\n");
-        for (int i = 0; i < data.length; i++) {
-            if (!(data)[i].equals("\n")) {
-                if ((data)[i].contains(" ")) {
-                    System.out.print(" if   data : " + i + "  " + (data)[i] + "\n");
-                    result += (data)[i] + "\n";
-                }
-
-            }
-
-        }
-        System.out.print(" FinDelete } " + "\n");
-        return result;
-    }
-
-    public String deteleData(String[] data, int n) {
-        String result = "";
-
-        System.out.print(" DeleteData { " + "\n");
-        for (int i = 0; i < data.length; i++) {
-            if (i == n) {
-                System.out.print(" ifdeletedata : " + i + "  " + (data)[i] + "\n");
-            } else {
-                result += (data)[i] + "\n";
+            if (i != coord) {
+                aux += getInformation(data)[i] + "\n";
             }
         }
-        System.out.print(" FinDeleteData } " + "\n");
-        return result;
+        return aux;
     }
 
     public String[] getInformation(String data) {
@@ -86,32 +34,6 @@ public class LogicFilesTxt {
         return data.split(",");
         // [0] a1
         // [1] Ana González
-    }
-
-    public String editInformation(String data) {
-        String result = "b";
-        if (data.charAt(0) == 'p' && data.charAt(1) == 'p') {
-            result = "pp";
-        }
-        if (data.charAt(0) == 'p' && data.charAt(1) == 'o') {
-            result = "po";
-        }
-        return result;
-    }
-
-    public String getPersonInformation(String data[], String address) {
-        String personInformation = "";
-
-        for (int i = 0; i < data.length; i++) {
-            System.out.println("no entra");
-            System.out.println(data[i] + "\n =data" + address + " =direccion");
-            if (data[i].contains(address)) {
-                personInformation += data[i] + "\n";
-                System.out.println("entra pero f");
-            }
-        }
-        return personInformation;
-
     }
 
     //obtener el numero de veces jugadas
@@ -129,19 +51,55 @@ public class LogicFilesTxt {
         return personInformation;
 
     }
+    //metodo para obtener el jugadores con coordenadas
 
-    //obtener el numero de jugadores
-    public int getNumberPerson(String data[]) {
-        int personInformation = 0;
+    public String getPlayerCoord(String data[], int coord) {
+
+        String personInformation = "";
 
         for (int i = 0; i < data.length; i++) {
-            personInformation++;
+            if (data[coord].contains(data[i])) {
+                personInformation += data[i];
+            }
         }
         return personInformation;
     }
 
+    //metodo para obtener id
+    public boolean isId(String data, String id) {
+
+        boolean result = false;
+
+        for (int i = 0; i <= getInformation(data).length; i++) {
+            if (getInformation(data)[0].contains(id)) {
+                result = true;
+            }
+
+        }
+
+        return result;
+    }
+    //metodo para obtener id
+
+    public String getById(String data, String id) {
+        String result = "";
+        // [0] a1, Ana González Torres, 867555959, WERTS,300000
+        // [1] a2, Gilberto Chacón Pérez, 88445$34, DGFDD, 350000
+        String aux = "";
+        for (int i = 0; i < getInformation(data).length; i++) {
+            aux = getInformation(data)[i];
+
+            if (getInformationIndividual(aux)[i].contains(id)) {
+                result = aux;
+                JOptionPane.showConfirmDialog(null, "aux " + result);
+            }
+
+        }
+        return result;
+    }
+
     //metodo para obtener el jugadoes aleatorios
-    public String getPlayer(String data[]) {
+    public String getPlayerRamdon(String data[]) {
 
         int number = (int) (Math.random() * 4 + 1);
         String personInformation = "";
@@ -160,35 +118,34 @@ public class LogicFilesTxt {
         return number;
     }
 
-    public void getPdf() {
+    public void getPdf(String address) {
 
         try {
-            File path = new File("src\\documents\\ProyectoII.pdf");
+            File path = new File(address);
             Desktop.getDesktop().open(path);
         } catch (IOException ex) {
         }
     }
 
-    public Object[][] getObject(int size, String data) {
-        System.out.println("GetObject" + "\n");
-        Object[][] date = new Object[size][7];
+    public Object[][] getObject(String data) {
         String[] dataInformationV;
         // [0] a1, Ana González Torres, 867555959, WERTS,300000
         // [1] a2, Gilberto Chacón Pérez, 88445$34, DGFDD, 350000
-        String[] InformationIndividualV;
+        String[] InformationIndividualH;
         // [0] a1
         // [1] Ana González
 
-        for (int i = 0; i < size; i++) {
+        Object[][] date = new Object[getSizeObjetc(data)[0]][getSizeObjetc(data)[1]];
+
+        for (int i = 0; i < getSizeObjetc(data)[0]; i++) {
             dataInformationV = getInformation(data);
-            //System.out.println("Data1: "+i+" "+dataInformationV[i] + "\n");
-            InformationIndividualV = getInformationIndividual(dataInformationV[i]);
 
-            for (int j = 0; j < InformationIndividualV.length; j++) {
-                System.out.println("Data2: " + j + " " + InformationIndividualV[j] + "\n");
+            InformationIndividualH = getInformationIndividual(dataInformationV[i]);
 
-                date[i][j] = InformationIndividualV[j];
-                // System.out.println(date[i][j] + "\n");
+            for (int j = 0; j < InformationIndividualH.length; j++) {
+                System.out.println("Data2: " + j + " " + InformationIndividualH[j] + "\n");
+
+                date[i][j] = InformationIndividualH[j];
 
             }
 
@@ -196,52 +153,66 @@ public class LogicFilesTxt {
         return date;
     }
 
-    public Object[][] getObjectReservation(int size, String data) {
-        System.out.println("GetObject" + "\n");
-        Object[][] date = new Object[size][6];
-        String[] dataInformationV;
-        //[0]p1, 7/11/2022, c1, pp2|po1|b2, 9500, entregado
-        //[1]p2, 7/11/2022, c2, pp1| |b1, 4000, pendiente
-        String[] InformationIndividualV;
-        // [0] p1
-        // [1] 7/11/2022
+    public int[] getSizeObjetc(String data) {
+        int size[] = new int[2];
+        // [0] a1, Ana González Torres, 867555959, WERTS,300000
+        // [1] a2, Gilberto Chacón Pérez, 88445$34, DGFDD, 350000
+        size[0] = getInformation(data).length;
 
-        for (int i = 0; i < size; i++) {
-            dataInformationV = getInformation(data);
-            //System.out.println("Data1: "+i+" "+dataInformationV[i] + "\n");
-            InformationIndividualV = getInformationIndividual(dataInformationV[i]);
-
-            for (int j = 0; j < InformationIndividualV.length; j++) {
-                System.out.println("Data2: " + j + " " + InformationIndividualV[j] + "\n");
-
-                date[i][j] = InformationIndividualV[j];
-                // System.out.println(date[i][j] + "\n");
-
-            }
-
+        for (int i = 0; i <= getInformationIndividual(data).length; i++) {
+            // [0] a1
+            // [1] Ana González
+            size[1] = i;
         }
-        return date;
+        return size;
     }
-    // se obtiene una matriz de tipo Object
 
     public String getObjetsConverString(Object[][] matriz) {
-        // Convertir el contenido de la matriz a una cadena de texto
-        String contenidoMatriz = "";
+        StringBuilder contenidoMatriz = new StringBuilder();
         if (matriz == null) {
-            contenidoMatriz = null;
+            contenidoMatriz.append("");
         } else {
-
             for (Object[] matriz1 : matriz) {
                 for (Object matriz11 : matriz1) {
-                    contenidoMatriz += matriz11 + ",";
+                    if (matriz11 != null) {
+                        contenidoMatriz.append(matriz11).append(",");
+                    }
+
                 }
-                contenidoMatriz += "\n";
+                contenidoMatriz.append("\n");
             }
-
-            // Mostrar el contenido de la matriz como una cadena de texto
-            System.out.println(contenidoMatriz);
         }
-
-        return contenidoMatriz;
+        return contenidoMatriz.toString();
     }
+
+    public Object[][] obtenerContenidoTabla(JTable table) {
+        TableModel model = table.getModel();
+        int numRows = model.getRowCount();
+        int numCols = model.getColumnCount();
+        Object[][] matriz = new Object[numRows][numCols];
+        for (int row = 0; row < numRows; row++) {
+            for (int col = 0; col < numCols; col++) {
+                matriz[row][col] = model.getValueAt(row, col);
+            }
+        }
+        return matriz;
+    }
+
+    public String obtenerContenidoDesdeMatriz(Object[][] matriz) {
+        StringBuilder contenidoMatriz = new StringBuilder();
+        if (matriz == null) {
+            contenidoMatriz.append("");
+        } else {
+            for (Object[] fila : matriz) {
+                for (Object elemento : fila) {
+                    if (elemento != null) {
+                        contenidoMatriz.append(elemento).append(",");
+                    }
+                }
+                contenidoMatriz.append("\n");
+            }
+        }
+        return contenidoMatriz.toString();
+    }
+
 }

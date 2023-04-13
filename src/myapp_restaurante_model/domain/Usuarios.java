@@ -32,9 +32,8 @@ public class Usuarios {
         this.nombre_Usuario = nombre_Usuario;
         this.apellidos_Usuario = apellidos_Usuario;
         this.correo_Usuario = correo_Usuario;
-        Usuarios.numberUser++;
 
-        if (result == null) {
+        if (result.isEmpty()) {
             Usuarios.numberUser++;
         } else {
             System.out.println("else");
