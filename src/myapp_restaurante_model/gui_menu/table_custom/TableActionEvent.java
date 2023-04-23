@@ -1,9 +1,6 @@
 package myapp_restaurante_model.gui_menu.table_custom;
 
-/**
- *
- * @author RAVEN
- */
+
 public interface TableActionEvent {
 
     public void onEdit(int row);

@@ -5,38 +5,25 @@
  */
 package myapp_restaurante_model.domain;
 
-import java.util.Date;
 
-/**
- *
- * @author TML
- */
 public final class Reserva {
 
     private String id_Reserva;
-    private Date fecha_Reserva;
+    private String fecha_Reserva;
     private int id_Cliente_Reserva;
     private int id_Mesa_Reserva;
     private boolean estado_Reserva;
-    private Date fecha_Baja_Reserva;
+    private String fecha_Baja_Reserva;
     private String hora_act;
 
-    public Reserva(String id_Reserva, Date fecha_Reserva, Cliente cliente,Mesa mesa, boolean estado_Reserva, Date fecha_Baja_Reserva, String hora_act) {
+    public Reserva(String id_Reserva, String fecha_Reserva, int id_Cliente_Reserva, int id_Mesa_Reserva, boolean estado_Reserva, String fecha_Baja_Reserva, String hora_act) {
         this.id_Reserva = id_Reserva;
         this.fecha_Reserva = fecha_Reserva;
-        asignarIdCliente(cliente);
-        asignarIdMesa(mesa);
+        this.id_Cliente_Reserva = id_Cliente_Reserva;
+        this.id_Mesa_Reserva = id_Mesa_Reserva;
         this.estado_Reserva = estado_Reserva;
         this.fecha_Baja_Reserva = fecha_Baja_Reserva;
         this.hora_act = hora_act;
-    }
-
-    public void asignarIdCliente(Cliente cliente) {
-        this.id_Cliente_Reserva = cliente.getId_Cliente();
-    }
-
-    public void asignarIdMesa(Mesa mesa) {
-        this.id_Mesa_Reserva = mesa.getId_Mesa();
     }
 
     public String getId_Reserva() {
@@ -47,11 +34,11 @@ public final class Reserva {
         this.id_Reserva = id_Reserva;
     }
 
-    public Date getFecha_Reserva() {
+    public String getFecha_Reserva() {
         return fecha_Reserva;
     }
 
-    public void setFecha_Reserva(Date fecha_Reserva) {
+    public void setFecha_Reserva(String fecha_Reserva) {
         this.fecha_Reserva = fecha_Reserva;
     }
 
@@ -79,11 +66,11 @@ public final class Reserva {
         this.estado_Reserva = estado_Reserva;
     }
 
-    public Date getFecha_Baja_Reserva() {
+    public String getFecha_Baja_Reserva() {
         return fecha_Baja_Reserva;
     }
 
-    public void setFecha_Baja_Reserva(Date fecha_Baja_Reserva) {
+    public void setFecha_Baja_Reserva(String fecha_Baja_Reserva) {
         this.fecha_Baja_Reserva = fecha_Baja_Reserva;
     }
 
@@ -95,9 +82,13 @@ public final class Reserva {
         this.hora_act = hora_act;
     }
 
+    
+
     @Override
     public String toString() {
-        return "Reserva{" + "id_Reserva=" + id_Reserva + ", fecha_Reserva=" + fecha_Reserva + ", id_Cliente_Reserva=" + id_Cliente_Reserva + ", id_Mesa_Reserva=" + id_Mesa_Reserva + ", estado_Reserva=" + estado_Reserva + ", fecha_Baja_Reserva=" + fecha_Baja_Reserva + ", hora_act=" + hora_act + '}';
+        return id_Reserva + "," + fecha_Reserva + "," + id_Cliente_Reserva
+                + "," + id_Mesa_Reserva + "," + estado_Reserva + ","
+                + fecha_Baja_Reserva + "," + hora_act;
     }
 
 }

@@ -7,35 +7,33 @@ package myapp_restaurante_model.domain;
 
 import java.util.Date;
 
-/**
- *
- * @author TML
- */
 public class Pedido {
+
     private int id_pedido;
-    private Date fecha_Pedido;
+    private String fecha_Pedido;
     private int id_Cliente_pedido;//id_cliente
     private double valor_pedido;
-   private double valor_itbis_pedido;
-   private double valor_propina_pedido;
-   private String concepto_pedido;
-   private boolean status_pedido;
- private int  id_camarero_pedido;
- private int id_mesa;
+    private double valor_itbis_pedido;
+    private double valor_propina_pedido;
+    private String concepto_pedido;
+    private boolean status_pedido;
+    private int id_camarero_pedido;
+    private int id_mesa;
 
-    public Pedido(int id_pedido, Date fecha_Pedido, Cliente cliente, double valor_pedido,
-            double valor_itbis_pedido, double valor_propina_pedido, String concepto_pedido,
-            boolean status_pedido, Empleado empleado, Mesa mesa) {
+    public Pedido() {
+    }
+
+    public Pedido(int id_pedido, String fecha_Pedido, int id_Cliente_pedido, double valor_pedido, double valor_itbis_pedido, double valor_propina_pedido, String concepto_pedido, boolean status_pedido, int id_camarero_pedido, int id_mesa) {
         this.id_pedido = id_pedido;
         this.fecha_Pedido = fecha_Pedido;
-        this.id_Cliente_pedido = cliente.getId_Cliente();
+        this.id_Cliente_pedido = id_Cliente_pedido;
         this.valor_pedido = valor_pedido;
         this.valor_itbis_pedido = valor_itbis_pedido;
         this.valor_propina_pedido = valor_propina_pedido;
         this.concepto_pedido = concepto_pedido;
         this.status_pedido = status_pedido;
-        this.id_camarero_pedido = empleado.getId_Empleado();
-        this.id_mesa = mesa.getId_Mesa();
+        this.id_camarero_pedido = id_camarero_pedido;
+        this.id_mesa = id_mesa;
     }
 
     public int getId_pedido() {
@@ -46,13 +44,15 @@ public class Pedido {
         this.id_pedido = id_pedido;
     }
 
-    public Date getFecha_Pedido() {
+    public String getFecha_Pedido() {
         return fecha_Pedido;
     }
 
-    public void setFecha_Pedido(Date fecha_Pedido) {
+    public void setFecha_Pedido(String fecha_Pedido) {
         this.fecha_Pedido = fecha_Pedido;
     }
+
+   
 
     public int getId_Cliente_pedido() {
         return id_Cliente_pedido;
@@ -120,9 +120,7 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pedido{" + "id_pedido=" + id_pedido + ", fecha_Pedido=" + fecha_Pedido + ", id_Cliente_pedido=" + id_Cliente_pedido + ", valor_pedido=" + valor_pedido + ", valor_itbis_pedido=" + valor_itbis_pedido + ", valor_propina_pedido=" + valor_propina_pedido + ", concepto_pedido=" + concepto_pedido + ", status_pedido=" + status_pedido + ", id_camarero_pedido=" + id_camarero_pedido + ", id_mesa=" + id_mesa + '}';
+        return id_pedido + "," + fecha_Pedido + "," + id_Cliente_pedido + "," + valor_pedido + "," + valor_itbis_pedido + "," + valor_propina_pedido + "," + concepto_pedido + "," + status_pedido + "," + id_camarero_pedido + "," + id_mesa;
     }
- 
- 
-   
+
 }

@@ -7,8 +7,15 @@ package myapp_restaurante_model.gui_menu.opciones;
 
 import myapp_restaurante_model.gui_menu.opciones.mantenimiento.PMUsuarios;
 import java.awt.BorderLayout;
+import myapp_restaurante_model.domain.Empleado;
 import myapp_restaurante_model.gui_menu.Menu;
+import myapp_restaurante_model.gui_menu.opciones.mantenimiento.PMCliente;
 import myapp_restaurante_model.gui_menu.opciones.mantenimiento.PMComentarios;
+import myapp_restaurante_model.gui_menu.opciones.mantenimiento.PMEmpleado;
+import myapp_restaurante_model.gui_menu.opciones.mantenimiento.PMMesa;
+import myapp_restaurante_model.gui_menu.opciones.mantenimiento.PMProducto;
+import myapp_restaurante_model.gui_menu.opciones.mantenimiento.PMReserva;
+import myapp_restaurante_model.gui_menu.opciones.mantenimiento.PMTipoProducto;
 
 public class Opciones_Mantenimiento extends javax.swing.JPanel {
 
@@ -74,14 +81,29 @@ public class Opciones_Mantenimiento extends javax.swing.JPanel {
 
         cReservas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cReservas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cReservas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cReservasMouseClicked(evt);
+            }
+        });
         jPanel1.add(cReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, -1, 200));
 
         cTProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cTProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cTProductos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cTProductosMouseClicked(evt);
+            }
+        });
         jPanel1.add(cTProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, -1, 200));
 
         cMesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cMesa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cMesa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cMesaMouseClicked(evt);
+            }
+        });
         jPanel1.add(cMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, 200));
 
         cComentarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
@@ -104,10 +126,20 @@ public class Opciones_Mantenimiento extends javax.swing.JPanel {
 
         cClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cClientesMouseClicked(evt);
+            }
+        });
         jPanel1.add(cClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
 
         cProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cProductoMouseClicked(evt);
+            }
+        });
         jPanel1.add(cProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, -1, 200));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
@@ -207,7 +239,14 @@ public class Opciones_Mantenimiento extends javax.swing.JPanel {
 
     private void cEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cEmpleadoMouseClicked
         // TODO add your handling code here:Empleado 
-        System.err.println("empleado");
+        PMEmpleado pmc;
+        pmc = new PMEmpleado();
+        menu.getjPanel_Menu().removeAll();
+        pmc.setSize(810, 540);
+        pmc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(pmc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
 
     }//GEN-LAST:event_cEmpleadoMouseClicked
 
@@ -222,6 +261,66 @@ public class Opciones_Mantenimiento extends javax.swing.JPanel {
         menu.getjPanel_Menu().revalidate();
         menu.getjPanel_Menu().repaint();
     }//GEN-LAST:event_cComentariosMouseClicked
+
+    private void cMesaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cMesaMouseClicked
+        // TODO add your handling code here: Mesa
+        PMMesa pmc;
+        pmc = new PMMesa();
+        menu.getjPanel_Menu().removeAll();
+        pmc.setSize(810, 540);
+        pmc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(pmc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cMesaMouseClicked
+
+    private void cClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cClientesMouseClicked
+        // TODO add your handling code here:Cliente
+        PMCliente pmc;
+        pmc = new PMCliente();
+        menu.getjPanel_Menu().removeAll();
+        pmc.setSize(810, 540);
+        pmc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(pmc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cClientesMouseClicked
+
+    private void cTProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cTProductosMouseClicked
+        // TODO add your handling code here:tipo producto
+        PMTipoProducto pmc;
+        pmc = new PMTipoProducto();
+        menu.getjPanel_Menu().removeAll();
+        pmc.setSize(810, 540);
+        pmc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(pmc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cTProductosMouseClicked
+
+    private void cProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cProductoMouseClicked
+        // TODO add your handling code here:Producto
+        PMProducto pmc;
+        pmc = new PMProducto();
+        menu.getjPanel_Menu().removeAll();
+        pmc.setSize(810, 540);
+        pmc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(pmc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cProductoMouseClicked
+
+    private void cReservasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cReservasMouseClicked
+        // TODO add your handling code here:reservas
+        PMReserva pmc;
+        pmc = new PMReserva();
+        menu.getjPanel_Menu().removeAll();
+        pmc.setSize(810, 540);
+        pmc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(pmc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cReservasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

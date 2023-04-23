@@ -6,13 +6,14 @@
 package myapp_restaurante_model.domain;
 
 public class Mesa {
-    private int id_Mesa;
-     private int max_Comensales;
-      private int cant_Comensales;
-       private int estatus_mesa;
-        private int numeros_mesas;
 
-    public Mesa(int id_Mesa, int max_Comensales, int cant_Comensales, int estatus_mesa, int numeros_mesas) {
+    private int id_Mesa;
+    private int max_Comensales;
+    private int cant_Comensales;
+    private boolean estatus_mesa;
+    private int numeros_mesas;
+
+    public Mesa(int id_Mesa, int max_Comensales, int cant_Comensales, boolean estatus_mesa, int numeros_mesas) {
         this.id_Mesa = id_Mesa;
         this.max_Comensales = max_Comensales;
         this.cant_Comensales = cant_Comensales;
@@ -44,11 +45,11 @@ public class Mesa {
         this.cant_Comensales = cant_Comensales;
     }
 
-    public int getEstatus_mesa() {
+    public boolean isEstatus_mesa() {
         return estatus_mesa;
     }
 
-    public void setEstatus_mesa(int estatus_mesa) {
+    public void setEstatus_mesa(boolean estatus_mesa) {
         this.estatus_mesa = estatus_mesa;
     }
 
@@ -62,8 +63,7 @@ public class Mesa {
 
     @Override
     public String toString() {
-        return "Mesa{" + "id_Mesa=" + id_Mesa + ", max_Comensales=" + max_Comensales + ", cant_Comensales=" + cant_Comensales + ", estatus_mesa=" + estatus_mesa + ", numeros_mesas=" + numeros_mesas + '}';
+        return  id_Mesa + "," + max_Comensales + "," + cant_Comensales + "," + estatus_mesa + "," + numeros_mesas ;
     }
-        
-        
+
 }

@@ -5,21 +5,31 @@
  */
 package myapp_restaurante_model.gui_menu.opciones;
 
-
-
-
+import java.awt.BorderLayout;
+import myapp_restaurante_model.gui_menu.Menu;
+import myapp_restaurante_model.gui_menu.opciones.consultas.PCCliente;
+import myapp_restaurante_model.gui_menu.opciones.consultas.PCComentarios;
+import myapp_restaurante_model.gui_menu.opciones.consultas.PCEmpleado;
+import myapp_restaurante_model.gui_menu.opciones.consultas.PCMesa;
+import myapp_restaurante_model.gui_menu.opciones.consultas.PCProducto;
+import myapp_restaurante_model.gui_menu.opciones.consultas.PCReserva;
+import myapp_restaurante_model.gui_menu.opciones.consultas.PCTipoProducto;
+import myapp_restaurante_model.gui_menu.opciones.consultas.PCUsuarios;
 
 public class Opciones_Consultas extends javax.swing.JPanel {
 
+    Menu menu;
+
     /**
      * Creates new form NewJPanel
+     *
+     * @param menu
      */
-    public Opciones_Consultas() {
+    public Opciones_Consultas(Menu menu) {
         initComponents();
-      
-
+        this.menu = menu;
     }
-  
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,7 +49,6 @@ public class Opciones_Consultas extends javax.swing.JPanel {
         cProducto = new javax.swing.JLabel();
         cMesa = new javax.swing.JLabel();
         cPedido = new javax.swing.JLabel();
-        cCamarero = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -51,7 +60,6 @@ public class Opciones_Consultas extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -64,43 +72,79 @@ public class Opciones_Consultas extends javax.swing.JPanel {
 
         cUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cUsuarioMouseClicked(evt);
+            }
+        });
         jPanel1.add(cUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, -1, -1));
 
         cReservas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cReservas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cReservas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cReservasMouseClicked(evt);
+            }
+        });
         jPanel1.add(cReservas, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, -1, 200));
 
         cTProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cTProductos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cTProductos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cTProductosMouseClicked(evt);
+            }
+        });
         jPanel1.add(cTProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, -1, 200));
 
         cComentarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cComentarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cComentarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cComentariosMouseClicked(evt);
+            }
+        });
         jPanel1.add(cComentarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
 
         cEmpleado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cEmpleado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cEmpleado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cEmpleadoMouseClicked(evt);
+            }
+        });
         jPanel1.add(cEmpleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
 
         cClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cClientesMouseClicked(evt);
+            }
+        });
         jPanel1.add(cClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
 
         cProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cProductoMouseClicked(evt);
+            }
+        });
         jPanel1.add(cProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, -1, 200));
 
         cMesa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cMesa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cMesa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cMesaMouseClicked(evt);
+            }
+        });
         jPanel1.add(cMesa, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, -1, 200));
 
         cPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(cPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, -1, 200));
-
-        cCamarero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
-        cCamarero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(cCamarero, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, 200));
+        jPanel1.add(cPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, 200));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
         jLabel6.setFont(new java.awt.Font("Tw Cen MT", 3, 42)); // NOI18N
@@ -181,28 +225,116 @@ public class Opciones_Consultas extends javax.swing.JPanel {
         jProgressBar1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jProgressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, -1, -1));
 
-        jLabel14.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel14.setFont(new java.awt.Font("Tw Cen MT", 3, 36)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Camareros");
-        jLabel14.setToolTipText("Nombre o dirección");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 250, 170, 40));
-
         jLabel15.setBackground(new java.awt.Color(0, 0, 0));
         jLabel15.setFont(new java.awt.Font("Tw Cen MT", 3, 36)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(102, 255, 153));
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Pedidos");
         jLabel15.setToolTipText("Nombre o dirección");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(523, 250, 170, 40));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 170, 40));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 540));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cClientesMouseClicked
+        // TODO add your handling code here:
+        PCCliente ppc;
+        ppc = new PCCliente();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+
+    }//GEN-LAST:event_cClientesMouseClicked
+
+    private void cComentariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cComentariosMouseClicked
+        // TODO add your handling code here:
+        PCComentarios ppc;
+        ppc = new PCComentarios();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cComentariosMouseClicked
+
+    private void cMesaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cMesaMouseClicked
+        // TODO add your handling code here:
+        PCMesa ppc;
+        ppc = new PCMesa();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cMesaMouseClicked
+
+    private void cEmpleadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cEmpleadoMouseClicked
+        // TODO add your handling code here:
+        PCEmpleado ppc;
+        ppc = new PCEmpleado();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cEmpleadoMouseClicked
+
+    private void cProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cProductoMouseClicked
+        // TODO add your handling code here:
+        PCProducto ppc;
+        ppc = new PCProducto();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cProductoMouseClicked
+
+    private void cReservasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cReservasMouseClicked
+        // TODO add your handling code here:
+        PCReserva ppc;
+        ppc = new PCReserva();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cReservasMouseClicked
+
+    private void cTProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cTProductosMouseClicked
+        // TODO add your handling code here:
+        PCTipoProducto ppc;
+        ppc = new PCTipoProducto();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cTProductosMouseClicked
+
+    private void cUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cUsuarioMouseClicked
+        // TODO add your handling code here:
+        PCUsuarios ppc;
+        ppc = new PCUsuarios();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cUsuarioMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel cCamarero;
     private javax.swing.JLabel cClientes;
     private javax.swing.JLabel cComentarios;
     private javax.swing.JLabel cEmpleado;
@@ -217,7 +349,6 @@ public class Opciones_Consultas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel6;
@@ -229,6 +360,4 @@ public class Opciones_Consultas extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
 //encapsulamiento
-
-
 }

@@ -7,10 +7,6 @@ package myapp_restaurante_model.domain;
 
 import java.util.logging.Logger;
 
-/**
- *
- * @author TML
- */
 public class Detalle_Entrada_Salida_Producto {
    private int id_E_S_Detalle; 
    private String Sec_E_S_Detalle;

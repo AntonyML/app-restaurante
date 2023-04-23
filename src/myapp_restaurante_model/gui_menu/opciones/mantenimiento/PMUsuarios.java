@@ -18,10 +18,7 @@ import myapp_restaurante_model.gui_menu.table_custom.TableActionEvent;
 import myapp_restaurante_model.logic.FilesTxt;
 import myapp_restaurante_model.logic.LogicFilesTxt;
 
-/**
- *
- * @author TML
- */
+ 
 public final class PMUsuarios extends javax.swing.JPanel {
 
     private TextPrompt t;
@@ -100,7 +97,7 @@ public final class PMUsuarios extends javax.swing.JPanel {
                 model.removeRow(row);
 
                 result = lTxt.deleteInformation(result, row);
-
+  f.EditFile(addressTxt, result);
                 System.out.println("Delete row : " + row);
             }
 
@@ -110,18 +107,14 @@ public final class PMUsuarios extends javax.swing.JPanel {
             }
         };
 
-        table.getColumnModel().getColumn(7).setCellRenderer(new TableActionCellRender());
-        table.getColumnModel().getColumn(7).setCellEditor(new TableActionCellEditor(event));
+        table.getColumnModel().getColumn(table.getColumnModel().getColumnCount() - 1).setCellRenderer(new TableActionCellRender());
+        table.getColumnModel().getColumn(table.getColumnModel().getColumnCount() - 1).setCellEditor(new TableActionCellEditor(event));
         //volvemos a editar la tabla para acomodar los parametros de acuerdo a los margenes que se necesita
         table.setIntercellSpacing(new java.awt.Dimension(5, 1));
         table.setRowHeight(40);
         jScrollPane1.setViewportView(table);
         if (table.getColumnModel().getColumnCount() > 0) {
-            table.getColumnModel().getColumn(0).setPreferredWidth(30);
-            table.getColumnModel().getColumn(1).setPreferredWidth(60);
-            table.getColumnModel().getColumn(2).setPreferredWidth(75);
-            table.getColumnModel().getColumn(4).setPreferredWidth(60);
-            table.getColumnModel().getColumn(7).setPreferredWidth(100);
+            table.getColumnModel().getColumn(table.getColumnModel().getColumnCount() - 1).setPreferredWidth(130);
         }
     }
 
@@ -482,7 +475,7 @@ public final class PMUsuarios extends javax.swing.JPanel {
                 model.removeRow(row);
 
                 result = lTxt.deleteInformation(result, row);
-
+  f.EditFile(addressTxt, result);
                 System.out.println("Delete row : " + row);
             }
 
@@ -491,18 +484,14 @@ public final class PMUsuarios extends javax.swing.JPanel {
                 System.out.println("View row b: " + row);
             }
         };
-        table.getColumnModel().getColumn(7).setCellRenderer(new TableActionCellRender());
-        table.getColumnModel().getColumn(7).setCellEditor(new TableActionCellEditor(event));
+        table.getColumnModel().getColumn(table.getColumnModel().getColumnCount() - 1).setCellRenderer(new TableActionCellRender());
+        table.getColumnModel().getColumn(table.getColumnModel().getColumnCount() - 1).setCellEditor(new TableActionCellEditor(event));
         //volvemos a editar la tabla para acomodar los parametros de acuerdo a los margenes que se necesita
         table.setIntercellSpacing(new java.awt.Dimension(5, 1));
         table.setRowHeight(40);
         jScrollPane1.setViewportView(table);
         if (table.getColumnModel().getColumnCount() > 0) {
-            table.getColumnModel().getColumn(0).setPreferredWidth(30);
-            table.getColumnModel().getColumn(1).setPreferredWidth(60);
-            table.getColumnModel().getColumn(2).setPreferredWidth(75);
-            table.getColumnModel().getColumn(4).setPreferredWidth(60);
-            table.getColumnModel().getColumn(7).setPreferredWidth(100);
+            table.getColumnModel().getColumn(table.getColumnModel().getColumnCount() - 1).setPreferredWidth(130);
         }
         this.repaint();
 

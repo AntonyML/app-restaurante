@@ -5,10 +5,6 @@
  */
 package myapp_restaurante_model.domain;
 
-/**
- *
- * @author TML
- */
 public class Comentarios {
     private int id_Comentario;
      private String correo;

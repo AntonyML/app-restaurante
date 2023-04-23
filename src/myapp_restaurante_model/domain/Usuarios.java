@@ -9,10 +9,7 @@ import javax.swing.JOptionPane;
 import myapp_restaurante_model.logic.FilesTxt;
 import myapp_restaurante_model.logic.LogicFilesTxt;
 
-/**
- *
- * @author TML
- */
+
 public class Usuarios {
 
     private static int numberUser;

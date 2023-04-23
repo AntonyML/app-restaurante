@@ -12,13 +12,26 @@ public class LogicFilesTxt {
     public LogicFilesTxt() {
 
     }
-
+//metodo para borrar datos de una fila
     public String deleteInformation(String data, int coord) {
         String aux = "";
         for (int i = 0; i < getInformation(data).length; i++) {
 
             if (i != coord) {
                 aux += getInformation(data)[i] + "\n";
+            }
+        }
+        return aux;
+    }
+    //metodo para editar datos de una fila
+        public String editInformation(String data, int coord,String editData) {
+        String aux = "";
+        for (int i = 0; i < getInformation(data).length; i++) {
+
+            if (i != coord) {
+                aux += getInformation(data)[i] + "\n";
+            }else{
+            aux+= editData + "\n";
             }
         }
         return aux;
@@ -65,38 +78,36 @@ public class LogicFilesTxt {
         return personInformation;
     }
 
-    //metodo para obtener id
+    //metodo para vefificar id
     public boolean isId(String data, String id) {
-
+        // JOptionPane.showMessageDialog(null, "entra");
         boolean result = false;
-
-        for (int i = 0; i <= getInformation(data).length; i++) {
-            if (getInformation(data)[0].contains(id)) {
+        String[] information = getInformation(data); // Obtener los elementos de datos
+        for (int i = 0; i < information.length; i++) { // Iterar sobre los elementos de datos
+            if (getInformationIndividual(information[i])[0].contains(id)) { // Comparar el identificador con el primer elemento de datos individual
                 result = true;
+                break; // Salir del bucle si se encuentra el identificador
             }
-
         }
-
         return result;
     }
-    //metodo para obtener id
 
-    public String getById(String data, String id) {
+    //metodo para obtener toda la fila de informacion por el id
+    public String getInformattionById(String data, String id) {
         String result = "";
-        // [0] a1, Ana González Torres, 867555959, WERTS,300000
-        // [1] a2, Gilberto Chacón Pérez, 88445$34, DGFDD, 350000
-        String aux = "";
-        for (int i = 0; i < getInformation(data).length; i++) {
-            aux = getInformation(data)[i];
-
-            if (getInformationIndividual(aux)[i].contains(id)) {
+        String[] information = getInformation(data); // Obtener los elementos de datos
+        for (int i = 0; i < information.length; i++) { // Iterar sobre los elementos de datos
+            String aux = information[i];
+            String[] individualInfo = getInformationIndividual(aux); // Obtener los elementos individuales de información
+            if (individualInfo[0].contains(id)) { // Comparar el identificador con el primer elemento de información individual
                 result = aux;
-                JOptionPane.showConfirmDialog(null, "aux " + result);
+                break; // Salir del bucle si se encuentra el identificador
             }
-
         }
         return result;
     }
+    
+    
 
     //metodo para obtener el jugadoes aleatorios
     public String getPlayerRamdon(String data[]) {

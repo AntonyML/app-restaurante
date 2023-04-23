@@ -14,10 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import myapp_restaurante_model.bussiness.Controller_Gui_Mantenimiento_Usuarios;
 
-/**
- *
- * @author Tony ML
- */
+ 
 public class Menu extends javax.swing.JFrame {
 
     /**
@@ -237,7 +234,7 @@ public class Menu extends javax.swing.JFrame {
     private void lProcesosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lProcesosMouseClicked
         // TODO add your handling code here:
 
-        Opciones_Procesos oP = new Opciones_Procesos();
+        Opciones_Procesos oP = new Opciones_Procesos(this);
         jPanel_Menu.removeAll();
         oP.setSize(810, 540);
         oP.setLocation(0, 0);
@@ -268,7 +265,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void lMovimientosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lMovimientosMouseClicked
         // TODO add your handling code here:Movimientos
-        Opciones_Movimientos oM = new Opciones_Movimientos();
+        Opciones_Movimientos oM = new Opciones_Movimientos(this);
         jPanel_Menu.removeAll();
         oM.setSize(810, 540);
         oM.setLocation(0, 0);
@@ -279,7 +276,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void lConsultasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lConsultasMouseClicked
         // TODO add your handling code here:consultas
-        Opciones_Consultas oC = new Opciones_Consultas();
+        Opciones_Consultas oC = new Opciones_Consultas(this);
         jPanel_Menu.removeAll();
         oC.setSize(810, 540);
         oC.setLocation(0, 0);

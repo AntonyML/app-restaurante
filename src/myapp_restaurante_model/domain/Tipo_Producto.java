@@ -5,38 +5,34 @@
  */
 package myapp_restaurante_model.domain;
 
-/**
- *
- * @author TML
- */
 public final class Tipo_Producto {
-     private int id_Cliente_Reserva;
-     private int nombre_tipo;
+     private int id_tipo_producto;
+     private String nombre_tipo;
 
-    public Tipo_Producto(Producto producto, int nombre_tipo) {
-        this.id_Cliente_Reserva = producto.getTipo_Producto();
+    public Tipo_Producto(int id_tipo_producto, String nombre_tipo) {
+        this.id_tipo_producto = id_tipo_producto;
         this.nombre_tipo = nombre_tipo;
     }
 
-    public int getId_Cliente_Reserva() {
-        return id_Cliente_Reserva;
+    public int getId_tipo_producto() {
+        return id_tipo_producto;
     }
 
-    public void setId_Cliente_Reserva(int id_Cliente_Reserva) {
-        this.id_Cliente_Reserva = id_Cliente_Reserva;
+    public void setId_tipo_producto(int id_tipo_producto) {
+        this.id_tipo_producto = id_tipo_producto;
     }
 
-    public int getNombre_tipo() {
+    public String getNombre_tipo() {
         return nombre_tipo;
     }
 
-    public void setNombre_tipo(int nombre_tipo) {
+    public void setNombre_tipo(String nombre_tipo) {
         this.nombre_tipo = nombre_tipo;
     }
 
     @Override
     public String toString() {
-        return "Tipo_Producto{" + "id_Cliente_Reserva=" + id_Cliente_Reserva + ", nombre_tipo=" + nombre_tipo + '}';
+        return id_tipo_producto + "," + nombre_tipo;
     }
 
    

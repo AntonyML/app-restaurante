@@ -4,11 +4,7 @@
  * and open the template in the editor.
  */
 package myapp_restaurante_model.gui_menu;
-
-/**
- *
- * @author Tony ML
- */
+ 
 public class JFGuardar extends javax.swing.JFrame {
 
     /**

@@ -5,20 +5,18 @@
  */
 package myapp_restaurante_model.domain;
 
-
 public class Cliente {
-     private int id_Cliente;
-       private String nombre_Cliente;
-         private String apellido_Cliente;
-           private String apellido_Pat_Cliente;
-          private String apellido_Mat_Cliente;
-           private String Celular_Cliente;
-            private String Correo_Cliente;
 
-    public Cliente(int id_Cliente, String nombre_Cliente, String apellido_Cliente, String apellido_Pat_Cliente, String apellido_Mat_Cliente, String Celular_Cliente, String Correo_Cliente) {
+    private int id_Cliente;
+    private String nombre_Cliente;
+    private String apellido_Pat_Cliente;
+    private String apellido_Mat_Cliente;
+    private String Celular_Cliente;
+    private String Correo_Cliente;
+
+    public Cliente(int id_Cliente, String nombre_Cliente, String apellido_Pat_Cliente, String apellido_Mat_Cliente, String Celular_Cliente, String Correo_Cliente) {
         this.id_Cliente = id_Cliente;
         this.nombre_Cliente = nombre_Cliente;
-        this.apellido_Cliente = apellido_Cliente;
         this.apellido_Pat_Cliente = apellido_Pat_Cliente;
         this.apellido_Mat_Cliente = apellido_Mat_Cliente;
         this.Celular_Cliente = Celular_Cliente;
@@ -39,14 +37,6 @@ public class Cliente {
 
     public void setNombre_Cliente(String nombre_Cliente) {
         this.nombre_Cliente = nombre_Cliente;
-    }
-
-    public String getApellido_Cliente() {
-        return apellido_Cliente;
-    }
-
-    public void setApellido_Cliente(String apellido_Cliente) {
-        this.apellido_Cliente = apellido_Cliente;
     }
 
     public String getApellido_Pat_Cliente() {
@@ -83,7 +73,8 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "id_Cliente=" + id_Cliente + ", nombre_Cliente=" + nombre_Cliente + ", apellido_Cliente=" + apellido_Cliente + ", apellido_Pat_Cliente=" + apellido_Pat_Cliente + ", apellido_Mat_Cliente=" + apellido_Mat_Cliente + ", Celular_Cliente=" + Celular_Cliente + ", Correo_Cliente=" + Correo_Cliente + '}';
+        return id_Cliente + "," + nombre_Cliente + "," + apellido_Pat_Cliente + "," + apellido_Mat_Cliente + "," + Celular_Cliente + ","
+                + Correo_Cliente;
     }
-    
+
 }

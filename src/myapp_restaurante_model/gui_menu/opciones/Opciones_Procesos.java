@@ -5,21 +5,28 @@
  */
 package myapp_restaurante_model.gui_menu.opciones;
 
-
-
-
+import java.awt.BorderLayout;
+import myapp_restaurante_model.gui_menu.Menu;
+import myapp_restaurante_model.gui_menu.opciones.movimientos.PMAESProducto;
+import myapp_restaurante_model.gui_menu.opciones.procesos.PPCancelarReserva;
+import myapp_restaurante_model.gui_menu.opciones.procesos.PPCobroPedido;
+import myapp_restaurante_model.gui_menu.opciones.procesos.PPDistribución;
 
 public class Opciones_Procesos extends javax.swing.JPanel {
 
+    Menu menu;
+
     /**
      * Creates new form NewJPanel
+     *
+     * @param menu
      */
-    public Opciones_Procesos() {
+    public Opciones_Procesos(Menu menu) {
+        this.menu = menu;
         initComponents();
-      
 
     }
-  
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,18 +59,38 @@ public class Opciones_Procesos extends javax.swing.JPanel {
 
         cES.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cES.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cES.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cESMouseClicked(evt);
+            }
+        });
         jPanel1.add(cES, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
 
         cPedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cPedidos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cPedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cPedidosMouseClicked(evt);
+            }
+        });
         jPanel1.add(cPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 40, -1, -1));
 
         cCancelarPedidos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cCancelarPedidos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cCancelarPedidos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cCancelarPedidosMouseClicked(evt);
+            }
+        });
         jPanel1.add(cCancelarPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, -1));
 
         cActualizarESProducto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cActualizarESProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cActualizarESProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cActualizarESProductoMouseClicked(evt);
+            }
+        });
         jPanel1.add(cActualizarESProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 260, -1, -1));
 
         jLabel.setBackground(new java.awt.Color(0, 0, 0));
@@ -78,7 +105,7 @@ public class Opciones_Procesos extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 255, 153));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Cacelar Propinas");
+        jLabel2.setText("Dis Propina");
         jLabel2.setToolTipText("Nombre o dirección");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 180, 40));
 
@@ -86,7 +113,7 @@ public class Opciones_Procesos extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 255, 153));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Cancelar Pedidos");
+        jLabel3.setText("Cancelar Reservas");
         jLabel3.setToolTipText("Nombre o dirección");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 333, 180, 60));
 
@@ -116,6 +143,56 @@ public class Opciones_Procesos extends javax.swing.JPanel {
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 540));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cESMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cESMouseClicked
+        // TODO  your handling code here:Cobro pedido
+        PPCobroPedido ppc;
+        ppc = new PPCobroPedido();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+
+    }//GEN-LAST:event_cESMouseClicked
+
+    private void cCancelarPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cCancelarPedidosMouseClicked
+        // TODO add your handling code here: reservas
+        PPCancelarReserva ppc;
+        ppc = new PPCancelarReserva();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+
+    }//GEN-LAST:event_cCancelarPedidosMouseClicked
+
+    private void cActualizarESProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cActualizarESProductoMouseClicked
+        // TODO add your handling code here:
+        PMAESProducto ppc;
+        ppc = new PMAESProducto();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cActualizarESProductoMouseClicked
+
+    private void cPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cPedidosMouseClicked
+        // TODO add your handling code here:
+        PPDistribución ppc;
+        ppc = new PPDistribución();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cPedidosMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cActualizarESProducto;
@@ -133,6 +210,4 @@ public class Opciones_Procesos extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
 //encapsulamiento
-
-
 }

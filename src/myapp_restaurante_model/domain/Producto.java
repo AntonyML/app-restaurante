@@ -5,16 +5,14 @@
  */
 package myapp_restaurante_model.domain;
 
-/**
- *
- * @author TML
- */
+
 public class Producto {
+
     private int id_Producto;
     private String Descripcion_Producto;
     private int tipo_Producto;
     private double precio_Producto;
-    private double  existencia_Producto;
+    private double existencia_Producto;
     private boolean itbis_Producto;
 
     public Producto(int id_Producto, String Descripcion_Producto, int tipo_Producto, double precio_Producto, double existencia_Producto, boolean itbis_Producto) {
@@ -76,8 +74,8 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "Producto{" + "id_Producto=" + id_Producto + ", Descripcion_Producto=" + Descripcion_Producto + ", tipo_Producto=" + tipo_Producto + ", precio_Producto=" + precio_Producto + ", existencia_Producto=" + existencia_Producto + ", itbis_Producto=" + itbis_Producto + '}';
+        return id_Producto + "," + Descripcion_Producto + "," + tipo_Producto
+                + "," + precio_Producto + "," + existencia_Producto + "," + itbis_Producto;
     }
-    
-    
+
 }

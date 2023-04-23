@@ -1,14 +1,7 @@
 package myapp_restaurante_model.gui_menu.table_custom;
 
 import javax.swing.table.DefaultTableModel;
-//import raven.cell.TableActionCellEditor;
-//import raven.cell.TableActionCellRender;
-//import raven.cell.TableActionEvent;
 
-/**
- *
- * @author RAVEN
- */
 public class Test extends javax.swing.JFrame {
 
     /**

@@ -5,10 +5,6 @@
  */
 package myapp_restaurante_model.domain;
 
-/**
- *
- * @author TML
- */
 public class Detalle_Pedido {
      private int id_Det_pedido;
      private int sec_pedido;
@@ -16,14 +12,15 @@ public class Detalle_Pedido {
      private double cantidad;
      private int precio_producto;
 
-    public Detalle_Pedido(Pedido pedido, int sec_pedido, Producto producto, double cantidad, int precio_producto) {
-        this.id_Det_pedido = pedido.getId_pedido();
+    public Detalle_Pedido(int id_Det_pedido, int sec_pedido, int id_Producto_pedido, double cantidad, int precio_producto) {
+        this.id_Det_pedido = id_Det_pedido;
         this.sec_pedido = sec_pedido;
-        this.id_Producto_pedido = producto.getId_Producto();
+        this.id_Producto_pedido = id_Producto_pedido;
         this.cantidad = cantidad;
         this.precio_producto = precio_producto;
     }
 
+   
     public int getId_Det_pedido() {
         return id_Det_pedido;
     }
@@ -66,7 +63,7 @@ public class Detalle_Pedido {
 
     @Override
     public String toString() {
-        return "Detalle_Pedido{" + "id_Det_pedido=" + id_Det_pedido + ", sec_pedido=" + sec_pedido + ", id_Producto_pedido=" + id_Producto_pedido + ", cantidad=" + cantidad + ", precio_producto=" + precio_producto + '}';
+        return id_Det_pedido + "," + sec_pedido + "," + id_Producto_pedido + "," + cantidad + ", " + precio_producto;
     }
      
 }

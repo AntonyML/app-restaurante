@@ -5,15 +5,12 @@
  */
 package myapp_restaurante_model.domain;
 
-/**
- *
- * @author TML
- */
 public class Entrada_Salidad_Producto {
+
     private int id_E_S;
-     private String fecha_E_S;  
-     private int tipo_E_S;
-     private boolean estatus_E_S;
+    private String fecha_E_S;
+    private int tipo_E_S;
+    private boolean estatus_E_S;
 
     public Entrada_Salidad_Producto(int id_E_S, String fecha_E_S, int tipo_E_S, boolean estatus_E_S) {
         this.id_E_S = id_E_S;
@@ -56,9 +53,7 @@ public class Entrada_Salidad_Producto {
 
     @Override
     public String toString() {
-        return "Entrada_Salidad_Producto{" + "id_E_S=" + id_E_S + ", fecha_E_S=" + fecha_E_S + ", tipo_E_S=" + tipo_E_S + ", estatus_E_S=" + estatus_E_S + '}';
+        return id_E_S + "," + fecha_E_S + "," + tipo_E_S + "," + estatus_E_S;
     }
-     
 
-    
 }
