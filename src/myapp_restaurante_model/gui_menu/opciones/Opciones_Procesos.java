@@ -183,14 +183,17 @@ public class Opciones_Procesos extends javax.swing.JPanel {
 
     private void cPedidosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cPedidosMouseClicked
         // TODO add your handling code here:
-        PPDistribución ppc;
-        ppc = new PPDistribución();
+
+        PPDistribución ppd;
+        ppd = new PPDistribución();
         menu.getjPanel_Menu().removeAll();
-        ppc.setSize(810, 540);
-        ppc.setLocation(0, 0);
-        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        ppd.setSize(810, 540);
+        ppd.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppd, BorderLayout.CENTER);
         menu.getjPanel_Menu().revalidate();
         menu.getjPanel_Menu().repaint();
+
+
     }//GEN-LAST:event_cPedidosMouseClicked
 
 

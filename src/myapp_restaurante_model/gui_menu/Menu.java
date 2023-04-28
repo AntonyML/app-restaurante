@@ -159,7 +159,7 @@ public class Menu extends javax.swing.JFrame {
         jlUser.setBackground(new java.awt.Color(255, 255, 255));
         jlUser.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jlUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/usuario (1).png"))); // NOI18N
-        jlUser.setText("TonyML");
+        jlUser.setText("User");
         jPanel2.add(jlUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 140, -1));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));

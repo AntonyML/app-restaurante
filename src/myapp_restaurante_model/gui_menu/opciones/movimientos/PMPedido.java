@@ -31,7 +31,6 @@ import myapp_restaurante_model.gui_menu.table_custom.TableActionEvent;
 import myapp_restaurante_model.logic.FilesTxt;
 import myapp_restaurante_model.logic.LogicFilesTxt;
 
- 
 public final class PMPedido extends javax.swing.JPanel {
 //variables
 
@@ -212,6 +211,25 @@ public final class PMPedido extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        id1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        table1 = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField10 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField11 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jTextField12 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField13 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jTextField14 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
+        jBuscar1 = new javax.swing.JLabel();
+        fondo1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -237,252 +255,10 @@ public final class PMPedido extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        id1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        table1 = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jBuscar1 = new javax.swing.JLabel();
-        fondo1 = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel1.setText("Fecha");
-        jLabel1.setToolTipText("Nombre o dirección");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, 30));
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel2.setText("ID Cliente");
-        jLabel2.setToolTipText("Nombre o dirección");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 30));
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 80, 30));
-
-        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel3.setText("Valor");
-        jLabel3.setToolTipText("Nombre o dirección");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 30));
-
-        id.setBackground(new java.awt.Color(0, 0, 0));
-        id.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        id.setForeground(new java.awt.Color(102, 255, 153));
-        id.setText("ID");
-        id.setToolTipText("Nombre o dirección");
-        add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, 30));
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 140, 40));
-
-        jTextCodigo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jTextCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextCodigo.setCaretColor(new java.awt.Color(51, 0, 51));
-        jTextCodigo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextCodigoMouseClicked(evt);
-            }
-        });
-        jTextCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextCodigoActionPerformed(evt);
-            }
-        });
-        add(jTextCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 70, 30));
-
-        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel8.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel8.setText("Valor itbis");
-        jLabel8.setToolTipText("Nombre o dirección");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, 30));
-
-        table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Fecha", "ID Cliente", "Valor", "Valor itbis", "Propina", "Concepto", "Status", "ID Camarero", "Id Mesa", "Accion"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true, true, true, true, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        table.setIntercellSpacing(new java.awt.Dimension(5, 1));
-        table.setRowHeight(40);
-        jScrollPane1.setViewportView(table);
-        if (table.getColumnModel().getColumnCount() > 0) {
-            table.getColumnModel().getColumn(0).setPreferredWidth(50);
-            table.getColumnModel().getColumn(1).setResizable(false);
-            table.getColumnModel().getColumn(2).setPreferredWidth(100);
-            table.getColumnModel().getColumn(5).setHeaderValue("Propina");
-            table.getColumnModel().getColumn(6).setPreferredWidth(100);
-            table.getColumnModel().getColumn(6).setHeaderValue("Concepto");
-            table.getColumnModel().getColumn(7).setHeaderValue("Status");
-            table.getColumnModel().getColumn(8).setHeaderValue("ID Camarero");
-            table.getColumnModel().getColumn(9).setHeaderValue("Id Mesa");
-        }
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 42, 570, 230));
-
-        jButton1.setBackground(new java.awt.Color(102, 255, 153));
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Guardar");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 120, 40));
-
-        borrar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        borrar.setForeground(new java.awt.Color(102, 255, 153));
-        borrar.setText("Borrar");
-        borrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        borrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                borrarMouseClicked(evt);
-            }
-        });
-        add(borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, 20));
-
-        jBuscar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jBuscar.setForeground(new java.awt.Color(102, 255, 153));
-        jBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/consultas.png"))); // NOI18N
-        jBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 102, 102)));
-        jBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBuscarMouseClicked(evt);
-            }
-        });
-        add(jBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 40, 30));
-
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 120, 40));
-
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel5.setText("Propina");
-        jLabel5.setToolTipText("Nombre o dirección");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, 20));
-
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-        add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 110, 30));
-
-        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel6.setText("Concepto");
-        jLabel6.setToolTipText("Nombre o dirección");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, 30));
-
-        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel9.setText("ID Mesa");
-        jLabel9.setToolTipText("Nombre o dirección");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, 30));
-
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-        add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 210, 30));
-
-        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel10.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel10.setText("Status");
-        jLabel10.setToolTipText("Nombre o dirección");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, 30));
-
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
-            }
-        });
-        add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 50, 30));
-
-        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel11.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel11.setText("ID Camarero");
-        jLabel11.setToolTipText("Nombre o dirección");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, 40));
-
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
-        add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 100, 30));
-
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
-            }
-        });
-        add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 80, 30));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -626,12 +402,243 @@ public final class PMPedido extends javax.swing.JPanel {
 
         fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/gradient (2).gif"))); // NOI18N
         fondo1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 230));
+        jPanel1.add(fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 520));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 540, 230));
+        jTabbedPane1.addTab("Detalle Pedido", jPanel1);
+
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 255, 153));
+        jLabel1.setText("Fecha");
+        jLabel1.setToolTipText("Nombre o dirección");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 120, 30));
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 255, 153));
+        jLabel2.setText("ID Cliente");
+        jLabel2.setToolTipText("Nombre o dirección");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, 30));
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 80, 30));
+
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 255, 153));
+        jLabel3.setText("Valor");
+        jLabel3.setToolTipText("Nombre o dirección");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, 30));
+
+        id.setBackground(new java.awt.Color(0, 0, 0));
+        id.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        id.setForeground(new java.awt.Color(102, 255, 153));
+        id.setText("ID");
+        id.setToolTipText("Nombre o dirección");
+        jPanel2.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, 30));
+
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 140, 40));
+
+        jTextCodigo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jTextCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextCodigo.setCaretColor(new java.awt.Color(51, 0, 51));
+        jTextCodigo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextCodigoMouseClicked(evt);
+            }
+        });
+        jTextCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextCodigoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 70, 30));
+
+        jLabel8.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel8.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(102, 255, 153));
+        jLabel8.setText("Valor itbis");
+        jLabel8.setToolTipText("Nombre o dirección");
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, 30));
+
+        table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Fecha", "ID Cliente", "Valor", "Valor itbis", "Propina", "Concepto", "Status", "ID Camarero", "Id Mesa", "Accion"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true, true, true, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table.setIntercellSpacing(new java.awt.Dimension(5, 1));
+        table.setRowHeight(40);
+        jScrollPane1.setViewportView(table);
+        if (table.getColumnModel().getColumnCount() > 0) {
+            table.getColumnModel().getColumn(0).setPreferredWidth(50);
+            table.getColumnModel().getColumn(1).setResizable(false);
+            table.getColumnModel().getColumn(2).setPreferredWidth(100);
+            table.getColumnModel().getColumn(5).setHeaderValue("Propina");
+            table.getColumnModel().getColumn(6).setPreferredWidth(100);
+            table.getColumnModel().getColumn(6).setHeaderValue("Concepto");
+            table.getColumnModel().getColumn(7).setHeaderValue("Status");
+            table.getColumnModel().getColumn(8).setHeaderValue("ID Camarero");
+            table.getColumnModel().getColumn(9).setHeaderValue("Id Mesa");
+        }
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 42, 570, 230));
+
+        jButton1.setBackground(new java.awt.Color(102, 255, 153));
+        jButton1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Guardar");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 120, 40));
+
+        borrar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        borrar.setForeground(new java.awt.Color(102, 255, 153));
+        borrar.setText("Borrar");
+        borrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        borrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                borrarMouseClicked(evt);
+            }
+        });
+        jPanel2.add(borrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, 20));
+
+        jBuscar.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jBuscar.setForeground(new java.awt.Color(102, 255, 153));
+        jBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/consultas.png"))); // NOI18N
+        jBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 102, 102)));
+        jBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBuscarMouseClicked(evt);
+            }
+        });
+        jPanel2.add(jBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 40, 30));
+
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 120, 40));
+
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 255, 153));
+        jLabel5.setText("Propina");
+        jLabel5.setToolTipText("Nombre o dirección");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, 20));
+
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField5ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 110, 30));
+
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(102, 255, 153));
+        jLabel6.setText("Concepto");
+        jLabel6.setToolTipText("Nombre o dirección");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, 30));
+
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(102, 255, 153));
+        jLabel9.setText("ID Mesa");
+        jLabel9.setToolTipText("Nombre o dirección");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, 30));
+
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 210, 30));
+
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel10.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(102, 255, 153));
+        jLabel10.setText("Status");
+        jLabel10.setToolTipText("Nombre o dirección");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, 30));
+
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 50, 30));
+
+        jLabel11.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel11.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(102, 255, 153));
+        jLabel11.setText("ID Camarero");
+        jLabel11.setToolTipText("Nombre o dirección");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, -1, 40));
+
+        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField8ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 100, 30));
+
+        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField9ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 80, 30));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/gradient (2).gif"))); // NOI18N
-        add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 540));
+        jPanel2.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 540));
+
+        jTabbedPane1.addTab("Pedido", jPanel2);
+
+        add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 810, 550));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -694,12 +701,11 @@ public final class PMPedido extends javax.swing.JPanel {
             //variables
             double valor_pedido = Double.parseDouble(jTextField13.getText()) * Double.parseDouble(jTextField14.getText());
 
-            
             double propina = Double.parseDouble(jTextField3.getText()) * 0.10;
-            p = new Pedido(Integer.parseInt(jTextCodigo.getText()), 
-                    fechaHoyTexto, 
+            p = new Pedido(Integer.parseInt(jTextCodigo.getText()),
+                    fechaHoyTexto,
                     Integer.parseInt(jTextField2.getText()),
-                    valor_pedido, 
+                    valor_pedido,
                     Double.parseDouble(jTextField4.getText()),
                     propina,
                     jTextField6.getText(),
@@ -777,7 +783,7 @@ public final class PMPedido extends javax.swing.JPanel {
             jTextField11.setText(String.valueOf(sec));
             jTextField12.setEnabled(true);
             jTextField13.setEnabled(true);
-           
+
         }
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -805,10 +811,21 @@ public final class PMPedido extends javax.swing.JPanel {
     private void jBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBuscarMouseClicked
         // TODO add your handling code here:Buscar
         // JOptionPane.showMessageDialog(null, "result"+result);
+
         //////////////////////
         //Direcion del txt
         String addressTxtCliente = "src\\myapp_restaurante_model\\data\\cliente.txt";
         String resultCliente = f.readFile(addressTxtCliente);
+        if (!lTxt.isId(resultCliente, jTextField2.getText())) {
+            PMCliente pmc;
+            pmc = new PMCliente();
+            menu.getjPanel_Menu().removeAll();
+            pmc.setSize(810, 540);
+            pmc.setLocation(0, 0);
+            menu.getjPanel_Menu().add(pmc, BorderLayout.CENTER);
+            menu.getjPanel_Menu().revalidate();
+            menu.getjPanel_Menu().repaint();
+        }
         ////////////////////////////////////
         String addressTxtCamarero = "src\\myapp_restaurante_model\\data\\empleado.txt";
         String resultCamarero = f.readFile(addressTxtCamarero);
@@ -1145,8 +1162,10 @@ public final class PMPedido extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField jTextCodigo;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;

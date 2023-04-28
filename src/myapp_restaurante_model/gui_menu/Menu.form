@@ -277,7 +277,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/myapp_restaurante_model/gui_menu/iconos/usuario (1).png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="TonyML"/>
+                <Property name="text" type="java.lang.String" value="User"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">

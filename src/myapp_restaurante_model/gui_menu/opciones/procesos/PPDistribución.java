@@ -5,23 +5,14 @@
  */
 package myapp_restaurante_model.gui_menu.opciones.procesos;
 
-import myapp_restaurante_model.gui_menu.opciones.mantenimiento.*;
 import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import javax.swing.JOptionPane;
 
-import javax.swing.table.DefaultTableModel;
-import myapp_restaurante_model.domain.Comentarios;
-import myapp_restaurante_model.domain.Empleado;
 import myapp_restaurante_model.domain.Mesa;
-import myapp_restaurante_model.domain.Producto;
-import myapp_restaurante_model.domain.Tipo_Producto;
 import myapp_restaurante_model.gui_menu.JFGuardar;
 import myapp_restaurante_model.gui_menu.TextPrompt;
-import myapp_restaurante_model.gui_menu.table_custom.TableActionCellEditor;
-import myapp_restaurante_model.gui_menu.table_custom.TableActionCellRender;
-import myapp_restaurante_model.gui_menu.table_custom.TableActionEvent;
 import myapp_restaurante_model.logic.FilesTxt;
 import myapp_restaurante_model.logic.LogicFilesTxt;
  
@@ -30,7 +21,7 @@ public final class PPDistribución extends javax.swing.JPanel {
     private TextPrompt t;
     private final JFGuardar pg;
     private final String[] eti;
-    private String result;
+    private final String result;
     private Mesa m;
 
     private final LogicFilesTxt lTxt;
@@ -52,8 +43,7 @@ public final class PPDistribución extends javax.swing.JPanel {
 
         //se inicializa todo el codigo del jframe
         initComponents();
-        //edita los jtexfields
-        setTextPront();
+       
 
         ////////////////
         result = "";
@@ -63,9 +53,7 @@ public final class PPDistribución extends javax.swing.JPanel {
      
       
 
-        jTextField1.setEnabled(false);
-
-        jButton1.setEnabled(false);
+        
     }
 
     //tabla para editar
@@ -104,17 +92,6 @@ public final class PPDistribución extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jBuscar = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        jTextCodigo1 = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        table1 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jBuscar1 = new javax.swing.JLabel();
-        fondo1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -228,120 +205,6 @@ public final class PPDistribución extends javax.swing.JPanel {
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/gradient (2).gif"))); // NOI18N
         add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, 0, 820, 540));
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel2.setText("Nombre");
-        jLabel2.setToolTipText("Nombre o dirección");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, 30));
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 180, 40));
-
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel5.setText("ID");
-        jLabel5.setToolTipText("Nombre o dirección");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, -1, 30));
-
-        jTextCodigo1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jTextCodigo1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextCodigo1.setCaretColor(new java.awt.Color(51, 0, 51));
-        jTextCodigo1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTextCodigo1MouseClicked(evt);
-            }
-        });
-        jTextCodigo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextCodigo1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextCodigo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 70, 30));
-
-        table1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "max", "Comensales", "Status", "numero"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, true, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        table1.setRowHeight(40);
-        jScrollPane2.setViewportView(table1);
-        if (table1.getColumnModel().getColumnCount() > 0) {
-            table1.getColumnModel().getColumn(0).setPreferredWidth(50);
-            table1.getColumnModel().getColumn(1).setResizable(false);
-            table1.getColumnModel().getColumn(2).setPreferredWidth(100);
-        }
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 42, 570, 490));
-
-        jButton2.setBackground(new java.awt.Color(102, 255, 153));
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Guardar");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 120, 40));
-
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 255, 153));
-        jLabel8.setText("Borrar");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, 20));
-
-        jBuscar1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jBuscar1.setForeground(new java.awt.Color(102, 255, 153));
-        jBuscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/consultas.png"))); // NOI18N
-        jBuscar1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 102, 102)));
-        jBuscar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBuscar1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBuscar1MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 40, 30));
-
-        fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/gradient (2).gif"))); // NOI18N
-        jPanel1.add(fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-8, 0, 820, 540));
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -414,57 +277,18 @@ public final class PPDistribución extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jBuscarMouseClicked
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextCodigo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextCodigo1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextCodigo1MouseClicked
-
-    private void jTextCodigo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextCodigo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextCodigo1ActionPerformed
-
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2MouseClicked
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel8MouseClicked
-
-    private void jBuscar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBuscar1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBuscar1MouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fondo;
-    private javax.swing.JLabel fondo1;
     private javax.swing.JLabel jBuscar;
-    private javax.swing.JLabel jBuscar1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextCodigo;
-    private javax.swing.JTextField jTextCodigo1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTable table;
-    private javax.swing.JTable table1;
     // End of variables declaration//GEN-END:variables
 
 //encapsulamiento

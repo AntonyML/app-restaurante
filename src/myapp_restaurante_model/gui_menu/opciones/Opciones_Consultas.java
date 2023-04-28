@@ -11,6 +11,7 @@ import myapp_restaurante_model.gui_menu.opciones.consultas.PCCliente;
 import myapp_restaurante_model.gui_menu.opciones.consultas.PCComentarios;
 import myapp_restaurante_model.gui_menu.opciones.consultas.PCEmpleado;
 import myapp_restaurante_model.gui_menu.opciones.consultas.PCMesa;
+import myapp_restaurante_model.gui_menu.opciones.consultas.PCPedido;
 import myapp_restaurante_model.gui_menu.opciones.consultas.PCProducto;
 import myapp_restaurante_model.gui_menu.opciones.consultas.PCReserva;
 import myapp_restaurante_model.gui_menu.opciones.consultas.PCTipoProducto;
@@ -144,6 +145,11 @@ public class Opciones_Consultas extends javax.swing.JPanel {
 
         cPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myapp_restaurante_model/gui_menu/iconos/circulo.gif"))); // NOI18N
         cPedido.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cPedido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cPedidoMouseClicked(evt);
+            }
+        });
         jPanel1.add(cPedido, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, 200));
 
         jLabel6.setBackground(new java.awt.Color(0, 0, 0));
@@ -332,6 +338,18 @@ public class Opciones_Consultas extends javax.swing.JPanel {
         menu.getjPanel_Menu().revalidate();
         menu.getjPanel_Menu().repaint();
     }//GEN-LAST:event_cUsuarioMouseClicked
+
+    private void cPedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cPedidoMouseClicked
+        // TODO add your handling code here:
+        PCPedido ppc;
+        ppc = new PCPedido();
+        menu.getjPanel_Menu().removeAll();
+        ppc.setSize(810, 540);
+        ppc.setLocation(0, 0);
+        menu.getjPanel_Menu().add(ppc, BorderLayout.CENTER);
+        menu.getjPanel_Menu().revalidate();
+        menu.getjPanel_Menu().repaint();
+    }//GEN-LAST:event_cPedidoMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

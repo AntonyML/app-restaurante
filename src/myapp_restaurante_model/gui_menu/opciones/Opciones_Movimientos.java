@@ -63,6 +63,9 @@ public class Opciones_Movimientos extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cPedidosMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cPedidosMouseEntered(evt);
+            }
         });
         jPanel1.add(cPedidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 180, -1, -1));
 
@@ -123,6 +126,10 @@ public class Opciones_Movimientos extends javax.swing.JPanel {
         menu.getjPanel_Menu().revalidate();
         menu.getjPanel_Menu().repaint();
     }//GEN-LAST:event_cPedidosMouseClicked
+
+    private void cPedidosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cPedidosMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cPedidosMouseEntered
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
